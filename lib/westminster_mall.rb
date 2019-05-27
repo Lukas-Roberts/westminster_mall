@@ -1,6 +1,2 @@
-require "westminster_mall/version"
-
-module WestminsterMall
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./westminster_mall/version"
+require_relative './westminster_mall/cli'
