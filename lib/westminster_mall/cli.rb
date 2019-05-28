@@ -1,6 +1,7 @@
-class WestminsterMall::CLI
+class CLI
   
   def call
+    Scraper.scrape_westminster
     list_stores
     directory
     goodbye
@@ -8,7 +9,7 @@ class WestminsterMall::CLI
   
   def list_stores
     puts "The stores of Westminster Mall:"
-    @stores = WestminsterMall::Stores.all 
+    @stores = Store.all 
     @stores.each.with.index(1) do |store, i|
       puts "#{i}. #{store.name} - #{store.phone_number}"
     end

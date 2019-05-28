@@ -1,4 +1,4 @@
-class WestminsterMall::Stores
+class Store
   attr_accessor :name, :description, :hours, :phone_number
   
   def self.all 
@@ -9,10 +9,6 @@ class WestminsterMall::Stores
     stores = []
     
     stores
-  end
-  
-  def self.scrape_westminster
-    doc = Nokogiri::HTML(open("https://westminstermall.com/stores"))
   end
   
 end
