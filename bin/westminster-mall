@@ -1,5 +1,6 @@
 !#/usr/bin/env ruby
  
-require '../lib/westminster_mall'
+require "bundler/setup"
+require "westminster_mall"
 
 WestminsterMall::CLI.new.call 
