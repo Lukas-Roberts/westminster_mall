@@ -4,4 +4,11 @@ class WestminsterMall::Stores
   def self.all 
     
   end
+  
+  def self.scrape_stores
+    stores = []
+    
+    stores
+  end
+  
 end
