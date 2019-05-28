@@ -11,4 +11,8 @@ class WestminsterMall::Stores
     stores
   end
   
+  def self.scrape_westminster
+    doc = Nokogiri::HTML(open("https://westminstermall.com/stores"))
+  end
+  
 end
