@@ -8,6 +8,10 @@ class WestminsterMall::CLI
   
   def list_stores
     puts "The stores of Westminster Mall:"
+    @stores = WestminsterMall::Stores.all 
+    @stores.each.with.index(1) do |store, i|
+      puts "#{i}. #{store.name} - #{store.phone_number}"
+    end
   end
   
   def directory
