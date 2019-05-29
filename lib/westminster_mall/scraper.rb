@@ -16,6 +16,9 @@ class Scraper
   def self.scrape_store(store)
     #this is where we add description, store hours...
     #use nokogiri to open "https://westminstermall.com#{store.url}"
+    
+    doc = Nokogiri::HTML(open(self.url))
+    binding.pry
   end
   
 end
