@@ -4,14 +4,15 @@ class CLI
     Scraper.scrape_stores
     list_stores
     directory
+    binding.pry
     goodbye
   end
   
   def list_stores
     puts "The stores of Westminster Mall:"
     @stores = Store.all 
-    @stores.each.with.index(1) do |store, i|
-      puts "#{i}. #{store.name} - #{store.phone_number}"
+    @stores.each.with_index(1) do |store, i|
+      puts "#{i}. #{store.name}"
     end
   end
   

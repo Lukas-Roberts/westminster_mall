@@ -10,7 +10,7 @@ class Scraper
       store.url = node.css("a").first.attr("href")
       store.name = node.css("a div.post__body h2").text.strip
     end
-    binding.pry
+    #binding.pry
   end
   
   def self.scrape_store(store)
