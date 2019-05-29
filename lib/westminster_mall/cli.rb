@@ -1,7 +1,7 @@
 class CLI
   
   def call
-    Scraper.scrape_westminster
+    Scraper.scrape_stores
     list_stores
     directory
     goodbye

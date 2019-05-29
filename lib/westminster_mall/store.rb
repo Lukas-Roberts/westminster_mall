@@ -1,14 +1,16 @@
 class Store
-  attr_accessor :name, :description, :hours, :phone_number
+  attr_accessor :name, :description, :hours, :phone_number, :url
+  @@all = []
+  
+  def initialize
+    @@all << self
+  end
   
   def self.all 
-    
+    @@all
   end
   
-  def self.scrape_stores
-    stores = []
-    
-    stores
-  end
+  
+  
   
 end
