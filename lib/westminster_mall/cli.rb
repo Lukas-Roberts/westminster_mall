@@ -16,7 +16,11 @@ class CLI
   end
   
   def directory
-    Scraper.scrape_store
+    input = nil
+    while input != "exit"
+      puts "Enter the number of the store you would like to learn more about or type exit:"
+      input = gets.strip.downcase
+      Scraper.scrape_store(input)
    # input = nil 
     #while input != "exit"
     #  puts "Enter the number of the store you would #like to learn more about or type exit:"

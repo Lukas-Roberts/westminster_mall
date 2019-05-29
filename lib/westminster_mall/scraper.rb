@@ -13,16 +13,16 @@ class Scraper
     #binding.pry
   end
   
-  def self.scrape_store
+  def self.scrape_store(input)
     #this is where we add description, store hours...
     #use nokogiri to open "https://westminstermall.com#{store.url}"
-    input = 1 
     store = Store.all[input - 1]
-    doc = Nokogiri::HTML(open("https://westminstermall.com#{store.url}"))
-    binding.pry
-      while input != "exit"
-      puts "Enter the number of the store you would like to learn more about or type exit:"
-      input = gets.strip.downcase
+      if store.hours = nil 
+        doc = Nokogiri::HTML(open("https://westminstermall.com#{store.url}"))
+        store.hours = doc.css("div.entry__body span")[0].text
+        store.phone_number = doc.css("")
+        binding.pry
+      end
     end
   end
   
