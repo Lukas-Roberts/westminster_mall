@@ -21,8 +21,8 @@ class CLI
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i < 121
         Scraper.scrape_store(input.to_i)
-        puts " #{Store.all[input.to_i-1].name}\n   #{Store.all[input.to_i-1].description}\n   #{Store.all[input.to_i-1].hours}\n   #{Store.all[input.to_i-1].phone_number}"
-      elsif input.to_i > 120 
+        puts " #{Store.all[input.to_i-1].name}\n   #{Store.all[input.to_i-1].description}\n   Store Hours #{Store.all[input.to_i-1].hours}\n   Telephone Number #{Store.all[input.to_i-1].phone_number}"
+      elsif input.to_i > 120 || input != "exit"
         puts "Invalad input. Please enter the number of the store you would like to learn more about or type exit:"
       else 
         goodbye
