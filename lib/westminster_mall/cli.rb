@@ -4,7 +4,6 @@ class CLI
     Scraper.scrape_stores
     list_stores
     directory
-    goodbye
   end
   
   def list_stores
@@ -16,14 +15,19 @@ class CLI
   end
   
   def directory
-    input = gets
+    input = nil
     while input != "exit"
       puts "Enter the number of the store you would like to learn more about or type exit:"
-      input.to_i
-      Scraper.scrape_store(input)
-      puts " #{Store.all[input-1].name}\n   #{Store.all[input-1].description}\n   #{Store.all[input-1].hours}\n   #{Store.all[input-1].phone_number}"
+      input = gets.strip.downcase
+      if input.to_i > 0 && input.to_i < 121
+        Scraper.scrape_store(input.to_i)
+        puts " #{Store.all[input.to_i-1].name}\n   #{Store.all[input.to_i-1].description}\n   #{Store.all[input.to_i-1].hours}\n   #{Store.all[input.to_i-1].phone_number}"
+      elsif input.to_i > 120 
+        puts "Invalad input. Please enter the number of the store you would like to learn more about or type exit:"
+      else 
+        goodbye
+      end
     end
-    
   end
   
   def goodbye
