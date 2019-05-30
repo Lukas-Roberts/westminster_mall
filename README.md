@@ -1,8 +1,7 @@
 # WestminsterMall
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/westminster_mall`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to the Westminster Mall gem! This gem scrapes the Malls website,"https://westminstermall.com/stores" for store information including store hours, a description of the store and the stores telephone number.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+run 'ruby bin/westminster-mall' in your command line and follow the prompts provided.
 
 ## Development
 
