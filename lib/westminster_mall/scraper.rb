@@ -22,9 +22,11 @@ class Scraper
       doc2 = Nokogiri::HTML(open("https://westminstermall.com/stores"))
       store.hours = doc.css("div.entry__body span")[0].text.strip
       store.phone_number = doc2.css("#postResults .post")[input-1].css("a ul.post__info").text.strip
-      if input-1 < 3
+      if input-1 < 2
         store.description = doc.css("div.entry__body p")[4].text.strip
-      else
+      elsif input-1 == 2 
+        store.description = doc.css("div.entry__desc p")[1].text.strip
+      else 
         store.description = doc.css("div.entry__desc p")[0].text.strip
       end
     end
