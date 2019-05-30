@@ -16,12 +16,12 @@ class CLI
   end
   
   def directory
-    input = nil
+    input = gets
     while input != "exit"
       puts "Enter the number of the store you would like to learn more about or type exit:"
-      input = gets.to_i
+      input.to_i
       Scraper.scrape_store(input)
-      #puts " #{Store.all[input-1].name}\n   #{Store.all[input-1].description}\n   #{Store.all[input-1].hours}\n   #{Store.all[input-1].phone_number}"
+      puts " #{Store.all[input-1].name}\n   #{Store.all[input-1].description}\n   #{Store.all[input-1].hours}\n   #{Store.all[input-1].phone_number}"
     end
     
   end
